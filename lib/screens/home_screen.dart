@@ -4,6 +4,7 @@ import 'package:my_portfolio/core/utils/nav_buttons.dart';
 import 'package:my_portfolio/core/utils/social_links.dart';
 import 'package:my_portfolio/sections/about_me_section.dart';
 import 'package:my_portfolio/sections/intro_section.dart';
+import 'package:my_portfolio/widgets/custom_divider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,7 +15,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //launch URLs
   void _launchURL(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
@@ -102,6 +102,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   Divider(thickness: 4, color: Colors.white70, indent: 15),
                   AboutMeSection(),
+
+                  SizedBox(height: 30),
+                  CustomDivider(),
                 ],
               ),
             ),

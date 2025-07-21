@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/core/gradient_text.dart';
 import 'package:my_portfolio/core/utils/avatar.dart';
+import 'package:my_portfolio/core/utils/social_links.dart';
+import 'package:my_portfolio/widgets/neon_card.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeSection extends StatelessWidget {
   const AboutMeSection({super.key});
@@ -35,25 +38,27 @@ class AboutMeSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Avatar
-              CustomCircularAvatar(imageUrl: 'assets/me.jpg', radius: 80),
+              CustomCircularAvatar(imageUrl: 'assets/me2.jpg', radius: 80),
               const SizedBox(width: 32),
               // Info
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //---------my name
                     const Text(
-                      'Abdalrahman',
+                      'Abdalrahman Alaa Eldin Salah',
                       style: TextStyle(
                         fontSize: 36,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 8),
+                    //---------my title
                     const Text(
                       'Flutter Developer | Mobile & Web Enthusiast',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 22,
                         color: Colors.blueGrey,
                         fontWeight: FontWeight.w500,
                       ),
@@ -64,35 +69,36 @@ class AboutMeSection extends StatelessWidget {
                       style: TextStyle(fontSize: 16, height: 1.5),
                     ),
                     const SizedBox(height: 20),
-                    // Social links
+                    //---------- Social links
                     Row(
                       children: [
+                        //-------github
                         IconButton(
                           icon: const FaIcon(FontAwesomeIcons.github),
                           tooltip: 'GitHub',
-                          onPressed: () =>
-                              _launchURL('https://github.com/yourusername'),
+                          onPressed: () => _launchURL(SocialLinks.github),
                         ),
+                        //-------Linkedin
                         IconButton(
                           icon: const FaIcon(FontAwesomeIcons.linkedin),
                           tooltip: 'LinkedIn',
-                          onPressed: () => _launchURL(
-                            'https://linkedin.com/in/yourusername',
-                          ),
+                          onPressed: () => _launchURL(SocialLinks.linkedin),
                         ),
+                        //-------Facebook
                         IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.twitter),
-                          tooltip: 'Twitter',
-                          onPressed: () =>
-                              _launchURL('https://twitter.com/yourusername'),
+                          icon: const FaIcon(FontAwesomeIcons.facebook),
+                          tooltip: 'Facebook',
+                          onPressed: () => _launchURL(SocialLinks.facebook),
                         ),
+                        //-------Email
                         IconButton(
                           icon: const FaIcon(FontAwesomeIcons.envelope),
                           tooltip: 'Email',
-                          onPressed: () => _launchURL('mailto:your@email.com'),
+                          onPressed: () => _launchURL(SocialLinks.email),
                         ),
                       ],
                     ),
+                    SizedBox(height: 50),
                   ],
                 ),
               ),
@@ -104,7 +110,11 @@ class AboutMeSection extends StatelessWidget {
   }
 
   void _launchURL(String url) async {
-    // Use url_launcher package
-    // This is a stub; actual implementation should use context or be moved to a util
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
