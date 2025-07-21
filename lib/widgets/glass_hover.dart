@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
+import 'package:my_portfolio/core/helper/url_launcher.dart';
 import 'package:my_portfolio/models/project.dart';
 
 class GlassHover extends StatelessWidget {
@@ -89,7 +89,8 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
                           ),
                           const Spacer(),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () =>
+                                launchUrlGlobal(widget.project.githubUrl!),
                             child: Container(
                               height: 35,
                               width: double.infinity,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/widgets/glass_hover.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../models/project.dart';
 
@@ -29,29 +28,9 @@ class ProjectCard extends StatelessWidget {
                   .toList(),
             ),
             const SizedBox(height: 8),
-            Row(
-              children: [
-                if (project.githubUrl != null)
-                  TextButton(
-                    onPressed: () {
-                      _launchURL(project.githubUrl!);
-                    },
-                    child: const Text('GitHub'),
-                  ),
-              ],
-            ),
           ],
         ),
       ),
     );
-  }
-
-  void _launchURL(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 }
