@@ -3,7 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/core/gradient_text.dart';
 import 'package:my_portfolio/core/utils/avatar.dart';
 import 'package:my_portfolio/core/utils/social_links.dart';
-import 'package:my_portfolio/widgets/neon_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeSection extends StatelessWidget {
