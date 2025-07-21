@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/core/utils/nav_buttons.dart';
+import 'package:my_portfolio/core/utils/social_links.dart';
+import 'package:my_portfolio/sections/about_me_section.dart';
 import 'package:my_portfolio/sections/intro_section.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         //contact me on whatsApp icon button
         actions: [
           InkWell(
-            onTap: () => _launchURL("https://wa.me/qr/KWV6YJ7TFZOTH1"),
+            onTap: () => _launchURL(SocialLinks.whatsApp),
             child: Container(
               padding: EdgeInsets.only(left: 12, right: 10, top: 6, bottom: 6),
               decoration: BoxDecoration(
@@ -99,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   //short brief intro
                   IntroSection(),
                   SizedBox(height: 30),
+
                   Divider(thickness: 4, color: Colors.white70, indent: 15),
+                  AboutMeSection(),
                 ],
               ),
             ),
