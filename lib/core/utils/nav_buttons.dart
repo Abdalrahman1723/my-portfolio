@@ -8,14 +8,12 @@ class NavButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: InkWell(
-        highlightColor: Colors.purple,
-        borderRadius: BorderRadius.circular(16),
-        hoverColor: AppColors.hoverColor,
-        onTap: () => navigate,
-        child: Text(title),
-      ),
+    return InkWell(
+      splashColor: Colors.deepPurpleAccent.shade100,
+      borderRadius: BorderRadius.circular(16),
+      hoverColor: AppColors.hoverColor,
+      onTap: () => navigate,
+      child: Text(title),
     );
   }
 }

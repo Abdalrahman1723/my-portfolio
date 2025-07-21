@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_portfolio/core/gradient_text.dart';
-import 'package:my_portfolio/core/utils/avatar.dart';
 import 'package:my_portfolio/core/utils/nav_buttons.dart';
+import 'package:my_portfolio/sections/intro_section.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -97,47 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 children: [
                   SizedBox(height: 30),
-                  //short brief
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      //----------the avatar
-                      CustomCircularAvatar(
-                        imageUrl: "assets/me.jpg",
-                        radius: 150,
-                      ),
-                      SizedBox(width: 20),
-
-                      //----------the name and brief
-                      Column(
-                        children: [
-                          //---Hello!
-                          GradientBackground.gradientText("Hello, World! I'm", [
-                            Colors.deepPurpleAccent,
-                            Colors.blueAccent,
-                          ], style: TextStyle(fontSize: 50)),
-                          //---My name is
-                          Text(
-                            "Abdalrahman",
-                            style: TextStyle(
-                              fontSize: 70,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          //---My catch phrase
-                          Text(
-                            "Developer by day, debugger by night,\n Googler 24/7.",
-                            style: TextStyle(
-                              fontSize: 28,
-                              color: Colors.blueGrey,
-                            ),
-                            overflow: TextOverflow.clip,
-                            textAlign: TextAlign.start,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  //short brief intro
+                  IntroSection(),
                 ],
               ),
             ),
