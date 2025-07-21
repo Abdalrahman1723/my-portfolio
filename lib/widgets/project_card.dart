@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/widgets/glass_hover.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/project.dart';
 
@@ -14,15 +16,15 @@ class ProjectCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(project.title, style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 8),
-            Text(project.description),
+            GlassHover(project: project),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,
-              children: project.technologies
+              children: project.technologies!
                   .map((tech) => Chip(label: Text(tech)))
                   .toList(),
             ),
@@ -32,16 +34,9 @@ class ProjectCard extends StatelessWidget {
                 if (project.githubUrl != null)
                   TextButton(
                     onPressed: () {
-                      _launchUrl(context, project.githubUrl!);
+                      _launchURL(project.githubUrl!);
                     },
                     child: const Text('GitHub'),
-                  ),
-                if (project.liveDemoUrl != null)
-                  TextButton(
-                    onPressed: () {
-                      _launchUrl(context, project.liveDemoUrl!);
-                    },
-                    child: const Text('Live Demo'),
                   ),
               ],
             ),
@@ -51,10 +46,12 @@ class ProjectCard extends StatelessWidget {
     );
   }
 
-  void _launchUrl(BuildContext context, String url) async {
-    // You can use url_launcher package for actual implementation
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Open: $url')));
+  void _launchURL(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

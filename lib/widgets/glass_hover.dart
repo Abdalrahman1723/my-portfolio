@@ -1,34 +1,23 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
+import 'package:my_portfolio/models/project.dart';
+
 class GlassHover extends StatelessWidget {
-  const GlassHover({super.key});
+  final Project project;
+  const GlassHover({super.key, required this.project});
 
   @override
   Widget build(BuildContext context) {
-    return const HoverCardWidget(
-      title: 'Colosseum',
-      image:
-          "https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_640.jpg",
-      slogan: "When in Rome, do as the Romans do",
-      description:
-          "The Colosseum, also named the Flavian Amphitheater, is a large amphitheater in Rome. It was built during the reign of the Flavian emperors as a gift to the Roman people.",
-    );
+    return HoverCardWidget(project: project);
   }
 }
 
 class HoverCardWidget extends StatefulWidget {
-  final String image;
-  final String title;
-  final String slogan;
-  final String description;
+  final Project project;
 
-  const HoverCardWidget(
-      {super.key,
-      required this.image,
-      required this.title,
-      required this.slogan,
-      required this.description});
+  const HoverCardWidget({super.key, required this.project});
 
   @override
   State<HoverCardWidget> createState() => _HoverCardWidgetState();
@@ -38,16 +27,13 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
     with SingleTickerProviderStateMixin {
   /// CREATING THE ANIMATION CONTROLLER TO CONTROLLER ANIMATION
   late final AnimationController _controller = AnimationController(
-      vsync: this, duration: const Duration(milliseconds: 300));
+    vsync: this,
+    duration: const Duration(milliseconds: 300),
+  );
   late final Animation<Offset> _animation = Tween<Offset>(
     begin: const Offset(1.1, 0),
     end: Offset.zero,
-  ).animate(
-    CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    ),
-  );
+  ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -62,9 +48,12 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
             children: [
               Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                        image: NetworkImage(widget.image), fit: BoxFit.cover)),
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                    image: AssetImage(widget.project.imageURL),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               SlideTransition(
                 position: _animation,
@@ -81,27 +70,20 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
                           const Spacer(),
 
                           /// TITLE
-                          TextUtil(
-                            text: widget.title,
-                            weight: true,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
+                          TextUtil(text: widget.project.title, weight: true),
+                          const SizedBox(height: 10),
 
                           /// SLOGAN
                           TextUtil(
-                            text: widget.slogan,
+                            text: widget.project.title,
                             size: 14,
                             weight: true,
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
+                          const SizedBox(height: 10),
 
                           /// DESCRIPTION
                           TextUtil(
-                            text: widget.description,
+                            text: widget.project.description,
                             size: 12,
                             weight: true,
                           ),
@@ -112,11 +94,11 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
                               height: 35,
                               width: double.infinity,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  gradient: const LinearGradient(colors: [
-                                    Colors.red,
-                                    Colors.orange,
-                                  ])),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: const LinearGradient(
+                                  colors: [Colors.red, Colors.orange],
+                                ),
+                              ),
                               alignment: Alignment.center,
                               child: const TextUtil(
                                 text: "Discover More",
@@ -137,10 +119,11 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
                   height: 320,
                   width: 220,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      border: Border.all(color: Colors.white, width: 4)),
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color: Colors.white, width: 4),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -154,17 +137,25 @@ class TextUtil extends StatelessWidget {
   final Color? color;
   final double? size;
   final bool? weight;
-  const TextUtil(
-      {super.key, required this.text, this.size, this.color, this.weight});
+  const TextUtil({
+    super.key,
+    required this.text,
+    this.size,
+    this.color,
+    this.weight,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       style: TextStyle(
-          color: color ?? Colors.white,
-          fontSize: size ?? 18,
-          fontWeight: weight == null ? FontWeight.normal : FontWeight.w900),
+        color: color ?? Colors.white,
+        fontSize: size ?? 18,
+        fontWeight: weight == null ? FontWeight.normal : FontWeight.w900,
+      ),
+      overflow: TextOverflow.ellipsis,
+      maxLines: 5,
     );
   }
 }

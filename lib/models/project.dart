@@ -1,15 +1,17 @@
 class Project {
   final String title;
   final String description;
-  final List<String> technologies;
+  final String slogan;
+  final List<String>? technologies;
   final String? githubUrl;
-  final String? liveDemoUrl;
+  final String imageURL;
 
   Project({
     required this.title,
     required this.description,
-    required this.technologies,
+    required this.slogan,
+    this.technologies,
     this.githubUrl,
-    this.liveDemoUrl,
+    required this.imageURL,
   });
 }

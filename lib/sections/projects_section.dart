@@ -1,29 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/core/gradient_text.dart';
+import 'package:my_portfolio/core/utils/app_colors.dart';
+import 'package:my_portfolio/data/projects.dart';
 import 'package:my_portfolio/widgets/project_card.dart';
 
-import '../models/project.dart';
-
 class ProjectsSection extends StatelessWidget {
-  ProjectsSection({super.key});
-
-  final List<Project> projects = [
-    Project(
-      title: 'Portfolio Website',
-      description:
-          'A personal portfolio website built with Flutter to showcase my projects and skills.',
-      technologies: ['Flutter', 'Dart', 'Web'],
-      githubUrl: 'https://github.com/yourusername/portfolio',
-      liveDemoUrl: 'https://yourportfolio.com',
-    ),
-    Project(
-      title: 'Weather App',
-      description:
-          'A cross-platform weather app with real-time data and beautiful UI.',
-      technologies: ['Flutter', 'REST API'],
-      githubUrl: 'https://github.com/yourusername/weather-app',
-    ),
-    // Add more projects here
-  ];
+  const ProjectsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +14,20 @@ class ProjectsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Projects', style: Theme.of(context).textTheme.headlineMedium),
+          GradientBackground.gradientText(
+            'Projects',
+            AppColors.gradientTextColors,
+            style: TextStyle(fontSize: 36),
+          ),
           const SizedBox(height: 24),
-          ...projects.map((project) => ProjectCard(project: project)),
+          GridView.count(
+            crossAxisCount: projects.length,
+            crossAxisSpacing: 12,
+            shrinkWrap: true,
+            children: [
+              ...projects.map((project) => ProjectCard(project: project)),
+            ],
+          ),
         ],
       ),
     );
