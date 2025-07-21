@@ -98,6 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(height: 30),
                   //short brief intro
                   IntroSection(),
+                  SizedBox(height: 30),
+                  Divider(thickness: 4, color: Colors.white70, indent: 15),
                 ],
               ),
             ),

@@ -32,10 +32,16 @@ class IntroSection extends StatelessWidget {
               ),
               //---My catch phrase
               Text(
-                "Developer by day, debugger by night,\n Googler 24/7.",
+                "Developer by day, debugger by night,\nGoogler 24/7.",
                 style: TextStyle(fontSize: 28, color: Colors.blueGrey),
                 overflow: TextOverflow.clip,
                 textAlign: TextAlign.start,
+              ),
+              SizedBox(height: 12),
+              //--- titles
+              Text(
+                "Software engineer | Flutter developer | Part-Time Bug Creator 🐞",
+                style: TextStyle(fontSize: 18),
               ),
             ],
           ),
