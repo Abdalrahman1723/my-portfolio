@@ -5,6 +5,7 @@ import 'package:my_portfolio/core/utils/nav_buttons.dart';
 import 'package:my_portfolio/core/utils/social_links.dart';
 import 'package:my_portfolio/sections/about_me_section.dart';
 import 'package:my_portfolio/sections/contact_me_section.dart';
+import 'package:my_portfolio/sections/footer.dart';
 import 'package:my_portfolio/sections/intro_section.dart';
 import 'package:my_portfolio/sections/projects_section.dart';
 import 'package:my_portfolio/sections/medium_section.dart';
@@ -146,6 +147,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Divider(thickness: 4, color: Colors.white70, indent: 15),
                   SizedBox(height: 30),
                   ContactSection(),
+                  SizedBox(height: 30),
+                  Footer(),
                 ],
               ),
             ),
