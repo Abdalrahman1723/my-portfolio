@@ -89,8 +89,15 @@ class _ContactSectionState extends State<ContactSection> {
               "ENG. Abdalrahman Alaa",
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: 12),
+            Text(
+              "Drop a message — even if it’s just to say hi 👋",
+              style: TextStyle(fontSize: 14, color: Colors.white70),
+            ),
             const SizedBox(height: 24),
+            //---------send email form
             TextField(
+              maxLength: 20,
               controller: _nameController,
               decoration: InputDecoration(
                 labelText: 'Your Name',
@@ -115,6 +122,7 @@ class _ContactSectionState extends State<ContactSection> {
             ),
             const SizedBox(height: 12),
             TextField(
+              maxLength: 250,
               controller: _messageController,
               maxLines: 5,
               decoration: InputDecoration(
