@@ -8,4 +8,9 @@ class ScreenType {
   bool get isDesktop => ResponsiveBreakpoints.of(context).isDesktop;
   bool get isTablet => ResponsiveBreakpoints.of(context).isTablet;
   bool get isMobile => ResponsiveBreakpoints.of(context).isMobile;
+
+  bool get isExactlyDesktop => ResponsiveBreakpoints.of(context).equals(DESKTOP);
+  bool get isLargerThanMobile => ResponsiveBreakpoints.of(context).largerThan(MOBILE);
+  bool get isSmallerThanTablet => ResponsiveBreakpoints.of(context).smallerThan(TABLET);
+  bool get isBetweenMobileAndTablet => ResponsiveBreakpoints.of(context).between(MOBILE, TABLET);
 }

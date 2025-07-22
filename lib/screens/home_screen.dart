@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/core/responsive/screen_type.dart';
 import 'package:my_portfolio/core/utils/nav_buttons.dart';
 import 'package:my_portfolio/core/utils/social_links.dart';
 import 'package:my_portfolio/sections/about_me_section.dart';
@@ -29,8 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final double tabletSize = screenWidth * .035;
     return Scaffold(
-      appBar: screenWidth < 810
+      appBar: !ScreenType(context: context).isLargerThanMobile
           ? null
           : AppBar(
               flexibleSpace: Container(
@@ -87,13 +89,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   // SizedBox(width: 150),
                   NavButtons(title: "Home", navigate: () {}),
-                  SizedBox(width: 100),
+                  SizedBox(
+                    width: ScreenType(context: context).isTablet
+                        ? tabletSize
+                        : 100,
+                  ),
                   Text("|"),
-                  SizedBox(width: 100),
+                  SizedBox(
+                    width: ScreenType(context: context).isTablet
+                        ? tabletSize
+                        : 100,
+                  ),
                   NavButtons(title: "Projects", navigate: () {}),
-                  SizedBox(width: 100),
+                  SizedBox(
+                    width: ScreenType(context: context).isTablet
+                        ? tabletSize
+                        : 100,
+                  ),
                   Text("|"),
-                  SizedBox(width: 100),
+                  SizedBox(
+                    width: ScreenType(context: context).isTablet
+                        ? tabletSize
+                        : 100,
+                  ),
                   NavButtons(title: "Contact", navigate: () {}),
                 ],
               ),
@@ -111,11 +129,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(height: 30),
 
                   Divider(thickness: 4, color: Colors.white70, indent: 15),
+                  SizedBox(height: 30),
                   AboutMeSection(),
 
-                  SizedBox(height: 30),
+                  SizedBox(height: 40),
                   CustomDivider(),
+                  SizedBox(height: 30),
                   ProjectsSection(),
+                  Divider(thickness: 4, color: Colors.white70, indent: 15),
 
                   SizedBox(height: 30),
                   MediumSection(),
