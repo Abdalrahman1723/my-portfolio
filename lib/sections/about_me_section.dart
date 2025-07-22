@@ -5,6 +5,7 @@ import 'package:my_portfolio/core/responsive/screen_type.dart';
 import 'package:my_portfolio/core/utils/avatar.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
 import 'package:my_portfolio/core/utils/social_links.dart';
+import 'package:my_portfolio/widgets/bio.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeSection extends StatelessWidget {
@@ -73,105 +74,14 @@ class AboutMeSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     //!cut from here
-                    ?!ScreenType(context: context).isMobile
-                        ? Column(
-                            children: [
-                              Text(
-                                Constants.myBio,
-                                style: TextStyle(fontSize: 16, height: 1.5),
-                              ),
-                              const SizedBox(height: 20),
-                              //---------- Social links
-                              Row(
-                                children: [
-                                  //-------github
-                                  IconButton(
-                                    icon: const FaIcon(FontAwesomeIcons.github),
-                                    tooltip: 'GitHub',
-                                    onPressed: () =>
-                                        _launchURL(SocialLinks.github),
-                                  ),
-                                  //-------Linkedin
-                                  IconButton(
-                                    icon: const FaIcon(
-                                      FontAwesomeIcons.linkedin,
-                                    ),
-                                    tooltip: 'LinkedIn',
-                                    onPressed: () =>
-                                        _launchURL(SocialLinks.linkedin),
-                                  ),
-                                  //-------Facebook
-                                  IconButton(
-                                    icon: const FaIcon(
-                                      FontAwesomeIcons.facebook,
-                                    ),
-                                    tooltip: 'Facebook',
-                                    onPressed: () =>
-                                        _launchURL(SocialLinks.facebook),
-                                  ),
-                                  //-------Email
-                                  IconButton(
-                                    icon: const FaIcon(
-                                      FontAwesomeIcons.envelope,
-                                    ),
-                                    tooltip: 'Email me',
-                                    onPressed: () =>
-                                        _launchURL(SocialLinks.email),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 50),
-                            ],
-                          )
-                        : null,
+                    ?!ScreenType(context: context).isMobile ? Bio() : null,
                     //----------Bio
                   ],
                 ),
               ),
             ],
           ),
-          ?ScreenType(context: context).isMobile
-              ? Column(
-                  children: [
-                    //----------Bio
-                    Text(
-                      Constants.myBio,
-                      style: TextStyle(fontSize: 16, height: 1.5),
-                    ),
-                    const SizedBox(height: 20),
-                    //---------- Social links
-                    Row(
-                      children: [
-                        //-------github
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.github),
-                          tooltip: 'GitHub',
-                          onPressed: () => _launchURL(SocialLinks.github),
-                        ),
-                        //-------Linkedin
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.linkedin),
-                          tooltip: 'LinkedIn',
-                          onPressed: () => _launchURL(SocialLinks.linkedin),
-                        ),
-                        //-------Facebook
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.facebook),
-                          tooltip: 'Facebook',
-                          onPressed: () => _launchURL(SocialLinks.facebook),
-                        ),
-                        //-------Email
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.envelope),
-                          tooltip: 'Email me',
-                          onPressed: () => _launchURL(SocialLinks.email),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 50),
-                  ],
-                )
-              : null,
+          ?ScreenType(context: context).isMobile ? Bio() : null,
         ],
       ),
     );
