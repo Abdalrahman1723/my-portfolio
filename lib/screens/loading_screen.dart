@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:my_portfolio/core/gradient_text.dart';
+import 'package:my_portfolio/core/utils/app_colors.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
@@ -12,16 +14,17 @@ class LoadingScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/dev.png'),
+            Image.asset('assets/dev.png', width: 100, height: 100),
             SizedBox(height: 16),
             LoadingAnimationWidget.staggeredDotsWave(
               color: Colors.white,
               size: 200,
             ),
             SizedBox(height: 12),
-            Text(
+            GradientBackground.gradientText(
               'Loading awesome things...',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              AppColors.gradientTextColors,
+              style: TextStyle(fontSize: 26),
             ),
           ],
         ),
