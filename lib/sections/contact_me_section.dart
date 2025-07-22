@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/gradient_text.dart';
 import 'package:my_portfolio/core/utils/app_colors.dart';
 import 'package:my_portfolio/core/utils/avatar.dart';
-import 'package:my_portfolio/core/utils/constants.dart';
-import 'package:my_portfolio/core/utils/social_links.dart';
-import 'package:my_portfolio/core/helper/url_launcher.dart';
-import 'package:my_portfolio/widgets/custom_divider.dart';
+import 'package:my_portfolio/core/helper/send_email.dart';
 
 class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
@@ -18,32 +15,43 @@ class _ContactSectionState extends State<ContactSection> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _messageController = TextEditingController();
+  bool _isSending = false;
 
   void _sendEmail() async {
-    final name = _nameController.text;
-    final email = _emailController.text;
-    final message = _messageController.text;
+    final name = _nameController.text.trim();
+    final email = _emailController.text.trim();
+    final message = _messageController.text.trim();
 
-    final mailtoUri = Uri(
-      scheme: 'mailto',
-      path: SocialLinks
-          .email, // Or use SocialLinks.email if you want to use the mailto string
-      query: Uri.encodeFull(
-        'subject=Message from $name&body=From: $email\n\n$message',
-      ),
+    if (name.isEmpty || email.isEmpty || message.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please fill in all fields.')),
+      );
+      return;
+    }
+
+    setState(() => _isSending = true);
+    final success = await sendEmailWithEmailJS(
+      name: name,
+      email: email,
+      message: message,
     );
+    setState(() => _isSending = false);
 
-    try {
-      await launchUrlGlobal(mailtoUri.toString());
-      if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text('Email app opened!')));
-      }
-    } catch (e) {
+    if (success) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open email app')),
+          const SnackBar(content: Text('Email sent successfully!')),
+        );
+        _nameController.clear();
+        _emailController.clear();
+        _messageController.clear();
+      }
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Failed to send email. Please try again.'),
+          ),
         );
       }
     }
@@ -122,9 +130,18 @@ class _ContactSectionState extends State<ContactSection> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
-                onPressed: _sendEmail,
-                icon: const Icon(Icons.send),
-                label: const Text('Send'),
+                onPressed: _isSending ? null : _sendEmail,
+                icon: _isSending
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: Colors.white,
+                        ),
+                      )
+                    : const Icon(Icons.send),
+                label: Text(_isSending ? 'Sending...' : 'Send'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepPurpleAccent,
                   foregroundColor: Colors.white,
