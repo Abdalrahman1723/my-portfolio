@@ -44,7 +44,7 @@ class IntroSection extends StatelessWidget {
         ? 20
         : 28;
     double titlesFontSize = isSmall
-        ? 10
+        ? 12
         : isMedium
         ? 14
         : 18;
@@ -82,6 +82,7 @@ class IntroSection extends StatelessWidget {
         Text(
           "Software engineer | Flutter developer | Part-Time Bug Creator 🐞",
           style: TextStyle(fontSize: titlesFontSize),
+          overflow: TextOverflow.visible,
         ),
       ],
     );
