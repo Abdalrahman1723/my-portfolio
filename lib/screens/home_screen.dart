@@ -27,68 +27,76 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            gradient: LinearGradient(
-              colors: [
-                const Color.fromARGB(255, 83, 56, 200),
-                Colors.blueAccent,
-                const Color.fromARGB(255, 37, 22, 63),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
-        //contact me on whatsApp icon button
-        actions: [
-          InkWell(
-            onTap: () => _launchURL(SocialLinks.whatsApp),
-            child: Container(
-              padding: EdgeInsets.only(left: 12, right: 10, top: 6, bottom: 6),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(28),
-                  bottomLeft: Radius.circular(28),
-                ),
-                gradient: LinearGradient(
-                  colors: [Colors.green, Colors.lightGreen],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+      appBar: screenWidth < 810
+          ? null
+          : AppBar(
+              flexibleSpace: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color.fromARGB(255, 83, 56, 200),
+                      Colors.blueAccent,
+                      const Color.fromARGB(255, 37, 22, 63),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
                 ),
               ),
-              child: Row(
-                children: [
-                  MouseRegion(
-                    cursor: SystemMouseCursors.click,
-                    child: FaIcon(FontAwesomeIcons.whatsapp),
+              //contact me on whatsApp icon button
+              actions: [
+                InkWell(
+                  onTap: () => _launchURL(SocialLinks.whatsApp),
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      left: 12,
+                      right: 10,
+                      top: 6,
+                      bottom: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(28),
+                        bottomLeft: Radius.circular(28),
+                      ),
+                      gradient: LinearGradient(
+                        colors: [Colors.green, Colors.lightGreen],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: FaIcon(FontAwesomeIcons.whatsapp),
+                        ),
+                        SizedBox(width: 6),
+                        Text("WhatsApp"),
+                      ],
+                    ),
                   ),
-                  SizedBox(width: 6),
-                  Text("WhatsApp"),
+                ),
+              ],
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // SizedBox(width: 150),
+                  NavButtons(title: "Home", navigate: () {}),
+                  SizedBox(width: 100),
+                  Text("|"),
+                  SizedBox(width: 100),
+                  NavButtons(title: "Projects", navigate: () {}),
+                  SizedBox(width: 100),
+                  Text("|"),
+                  SizedBox(width: 100),
+                  NavButtons(title: "Contact", navigate: () {}),
                 ],
               ),
             ),
-          ),
-        ],
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // SizedBox(width: 150),
-            NavButtons(title: "Home", navigate: () {}),
-            SizedBox(width: 100),
-            Text("|"),
-            SizedBox(width: 100),
-            NavButtons(title: "Projects", navigate: () {}),
-            SizedBox(width: 100),
-            Text("|"),
-            SizedBox(width: 100),
-            NavButtons(title: "Contact", navigate: () {}),
-          ],
-        ),
-      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(

@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
+        
       ),
       home: const MyHomePage(),
     );

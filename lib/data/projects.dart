@@ -20,5 +20,14 @@ final List<Project> projects = [
     githubUrl: 'https://github.com/Abdalrahman1723/chat-app',
     imageURL: 'lib/core/assets/chatting_assets/chatting.jpg',
   ),
+  Project(
+    title: 'Online chatting app',
+    slogan: "Let's chat together",
+    description:
+        'A cross-platform chat application built with Flutter and firebase.',
+    technologies: ['Flutter', 'Dart', 'Firebase'],
+    githubUrl: 'https://github.com/Abdalrahman1723/chat-app',
+    imageURL: 'lib/core/assets/chatting_assets/chatting.jpg',
+  ),
   // Add more projects here
 ];

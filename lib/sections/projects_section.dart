@@ -12,6 +12,7 @@ class ProjectsSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GradientBackground.gradientText(
@@ -20,13 +21,32 @@ class ProjectsSection extends StatelessWidget {
             style: TextStyle(fontSize: 36),
           ),
           const SizedBox(height: 24),
-          GridView.count(
-            crossAxisCount: projects.length,
-            crossAxisSpacing: 12,
-            shrinkWrap: true,
-            children: [
-              ...projects.map((project) => ProjectCard(project: project)),
-            ],
+          LayoutBuilder(
+            builder: (context, constraints) {
+              int crossAxisCount;
+              double width = constraints.maxWidth;
+              if (width < 600) {
+                crossAxisCount = 1;
+              } else if (width < 1400) {
+                crossAxisCount = 2;
+              } else {
+                crossAxisCount = 3;
+              }
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: crossAxisCount,
+                  crossAxisSpacing: 20.0,
+                  mainAxisSpacing: 20.0,
+                  childAspectRatio: 1.0,
+                ),
+                itemCount: projects.length,
+                itemBuilder: (context, index) {
+                  return ProjectCard(project: projects[index]);
+                },
+              );
+            },
           ),
         ],
       ),

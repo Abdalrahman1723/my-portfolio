@@ -12,25 +12,23 @@ class NeonGradientCardDemo extends StatelessWidget {
         width: 200,
         height: 80,
         child: Center(
-          child: Container(
-            child: const NeonCard(
-              intensity: 0.5,
-              glowSpread: .6,
-              child: SizedBox(
-                width: 200,
-                height: 80,
-                child: Center(
-                  child: GradientText(
-                    text: 'Things are about to\nget spicy',
-
-                    fontSize: 20,
-                    gradientColors: [
-                      // Pink
-                      Color.fromARGB(255, 255, 41, 117),
-                      Color.fromARGB(255, 255, 41, 117),
-                      Color.fromARGB(255, 9, 221, 222), // Cyan
-                    ],
-                  ),
+          child: const NeonCard(
+            intensity: 0.5,
+            glowSpread: .6,
+            child: SizedBox(
+              width: 200,
+              height: 80,
+              child: Center(
+                child: GradientText(
+                  text: 'Things are about to\nget spicy',
+          
+                  fontSize: 20,
+                  gradientColors: [
+                    // Pink
+                    Color.fromARGB(255, 255, 41, 117),
+                    Color.fromARGB(255, 255, 41, 117),
+                    Color.fromARGB(255, 9, 221, 222), // Cyan
+                  ],
                 ),
               ),
             ),
