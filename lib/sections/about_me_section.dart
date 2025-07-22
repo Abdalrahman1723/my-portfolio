@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/core/gradient_text.dart';
 import 'package:my_portfolio/core/responsive/screen_type.dart';
 import 'package:my_portfolio/core/utils/avatar.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
-import 'package:my_portfolio/core/utils/social_links.dart';
 import 'package:my_portfolio/widgets/bio.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class AboutMeSection extends StatelessWidget {
   const AboutMeSection({super.key});
@@ -73,7 +70,7 @@ class AboutMeSection extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    //!cut from here
+                    //show the bio and social links
                     ?!ScreenType(context: context).isMobile ? Bio() : null,
                     //----------Bio
                   ],
@@ -81,18 +78,10 @@ class AboutMeSection extends StatelessWidget {
               ),
             ],
           ),
+          //show the bio and social links
           ?ScreenType(context: context).isMobile ? Bio() : null,
         ],
       ),
     );
-  }
-
-  void _launchURL(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 }

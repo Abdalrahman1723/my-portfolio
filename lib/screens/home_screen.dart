@@ -5,6 +5,7 @@ import 'package:my_portfolio/core/utils/social_links.dart';
 import 'package:my_portfolio/sections/about_me_section.dart';
 import 'package:my_portfolio/sections/intro_section.dart';
 import 'package:my_portfolio/sections/projects_section.dart';
+import 'package:my_portfolio/sections/medium_section.dart';
 import 'package:my_portfolio/widgets/custom_divider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -115,6 +116,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(height: 30),
                   CustomDivider(),
                   ProjectsSection(),
+
+                  SizedBox(height: 30),
+                  MediumSection(),
                 ],
               ),
             ),

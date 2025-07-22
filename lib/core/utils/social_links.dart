@@ -7,6 +7,7 @@ class SocialLinks {
   static const String whatsApp = "https://wa.me/qr/KWV6YJ7TFZOTH1";
   static const String email =
       "mailto:abdalrahman.alaa.eldin@gmail.com?subject=Hello&body=I%20saw%20your%20portfolio!";
+  static const String medium = "https://medium.com/@abdalrahman.alaa.eldin";
   /**  What it does:
 mailto: tells the browser or OS to open the default email client.
 
