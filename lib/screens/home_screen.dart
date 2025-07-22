@@ -107,7 +107,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // SizedBox(width: 150),
-                  NavButtons(title: "Home", navigate: () {}),
+                  NavButtons(
+                    title: "Home",
+                    navigate: () => scrollToSection(homeKey),
+                  ),
                   SizedBox(
                     width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
@@ -119,7 +122,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? tabletSize
                         : 100,
                   ),
-                  NavButtons(title: "About", navigate: () {}),
+                  NavButtons(
+                    title: "About",
+                    navigate: () => scrollToSection(aboutKey),
+                  ),
                   SizedBox(
                     width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
@@ -131,7 +137,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? tabletSize
                         : 100,
                   ),
-                  NavButtons(title: "Projects", navigate: () {}),
+                  NavButtons(
+                    title: "Projects",
+                    navigate: () => scrollToSection(projectsKey),
+                  ),
                   SizedBox(
                     width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
@@ -143,7 +152,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         ? tabletSize
                         : 100,
                   ),
-                  NavButtons(title: "Contact", navigate: () {}),
+                  NavButtons(
+                    title: "Contact",
+                    navigate: () => scrollToSection(contactKey),
+                  ),
                 ],
               ),
             ),
@@ -157,18 +169,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       SizedBox(height: 30),
-                      //short brief intro
-                      IntroSection(),
+                      //----short brief intro section
+                      Container(key: homeKey, child: IntroSection()),
                       SizedBox(height: 30),
 
                       Divider(thickness: 4, color: Colors.white70, indent: 15),
                       SizedBox(height: 30),
-                      AboutMeSection(),
+                      //----about section
+                      Container(key: aboutKey, child: AboutMeSection()),
 
                       SizedBox(height: 40),
                       CustomDivider(),
                       SizedBox(height: 30),
-                      ProjectsSection(),
+                      //----projects section
+                      Container(key: projectsKey, child: ProjectsSection()),
                       Divider(thickness: 4, color: Colors.white70, indent: 15),
 
                       SizedBox(height: 30),
@@ -177,7 +191,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(height: 30),
                       Divider(thickness: 4, color: Colors.white70, indent: 15),
                       SizedBox(height: 30),
-                      ContactSection(),
+                      //----contact section
+                      Container(key: contactKey, child: ContactSection()),
                     ],
                   ),
                 ),
