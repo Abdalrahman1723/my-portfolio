@@ -1,3 +1,4 @@
+import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/gradient_text.dart';
 import 'package:my_portfolio/core/utils/app_colors.dart';
@@ -25,24 +26,20 @@ class ProjectsSection extends StatelessWidget {
             builder: (context, constraints) {
               int crossAxisCount;
               double width = constraints.maxWidth;
-              if (width < 600) {
+              if (width < 800) {
                 crossAxisCount = 1;
-              } else if (width < 1400) {
+              } else if (width < 1100) {
                 crossAxisCount = 2;
               } else {
                 crossAxisCount = 3;
               }
-              return GridView.builder(
+              return DynamicHeightGridView(
                 shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: 20.0,
-                  mainAxisSpacing: 20.0,
-                  childAspectRatio: 1.0,
-                ),
                 itemCount: projects.length,
-                itemBuilder: (context, index) {
+                crossAxisCount: crossAxisCount,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                builder: (ctx, index) {
                   return ProjectCard(project: projects[index]);
                 },
               );
