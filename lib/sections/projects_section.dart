@@ -6,53 +6,6 @@ import 'package:my_portfolio/data/projects.dart';
 import 'package:my_portfolio/widgets/project_card.dart';
 import 'package:my_portfolio/core/responsive/screen_type.dart';
 
-class _AnimatedScrollArrow extends StatefulWidget {
-  @override
-  _AnimatedScrollArrowState createState() => _AnimatedScrollArrowState();
-}
-
-class _AnimatedScrollArrowState extends State<_AnimatedScrollArrow> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1000),
-    )..repeat(reverse: true);
-    _animation = Tween<double>(begin: 0, end: 16).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animation,
-      builder: (context, child) {
-        return Padding(
-          padding: EdgeInsets.only(left: _animation.value),
-          child: Row(
-            children: const [
-              Icon(Icons.arrow_forward_ios, size: 24, color: Colors.grey),
-              SizedBox(width: 4),
-              Text('Scroll', style: TextStyle(color: Colors.grey, fontSize: 14)),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
-
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
 
@@ -83,12 +36,9 @@ class ProjectsSection extends StatelessWidget {
                 crossAxisCount = 3;
               }
               if (screenType.isMobile) {
-                // On mobile, show an animated arrow to indicate horizontal scroll
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                // On mobile, use horizontal scrollable row with a scroll hint arrow
+                return Stack(
                   children: [
-                    _AnimatedScrollArrow(),
-                    const SizedBox(height: 8),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -101,6 +51,12 @@ class ProjectsSection extends StatelessWidget {
                             )
                             .toList(),
                       ),
+                    ),
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      bottom: 0,
+                      child: _ScrollArrowIndicator(),
                     ),
                   ],
                 );
@@ -120,6 +76,66 @@ class ProjectsSection extends StatelessWidget {
             },
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _ScrollArrowIndicator extends StatefulWidget {
+  @override
+  State<_ScrollArrowIndicator> createState() => _ScrollArrowIndicatorState();
+}
+
+class _ScrollArrowIndicatorState extends State<_ScrollArrowIndicator>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    )..repeat(reverse: true);
+    _animation = Tween<double>(
+      begin: 0,
+      end: 10,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IgnorePointer(
+      child: AnimatedBuilder(
+        animation: _animation,
+        builder: (context, child) {
+          return Container(
+            alignment: Alignment.center,
+            width: 36,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Colors.transparent, Colors.white.withOpacity(0.08)],
+              ),
+            ),
+            child: Transform.translate(
+              offset: Offset(_animation.value, 0),
+              child: Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.grey.withOpacity(0.7),
+                size: 24,
+              ),
+            ),
+          );
+        },
       ),
     );
   }
