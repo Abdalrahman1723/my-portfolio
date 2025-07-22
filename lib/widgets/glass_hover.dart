@@ -75,8 +75,8 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
 
                           /// SLOGAN
                           TextUtil(
-                            text: widget.project.title,
-                            size: 14,
+                            text: widget.project.slogan,
+                            size: 12,
                             weight: true,
                           ),
                           const SizedBox(height: 10),

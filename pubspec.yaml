@@ -37,8 +37,7 @@ flutter:
   assets:
     - assets/me.jpg
     - assets/
-    - lib/core/assets/hcms_assets/
-    - lib/core/assets/chatting_assets/
+    - lib/core/assets/
 
   # fonts:
   #   - family: Schyler
