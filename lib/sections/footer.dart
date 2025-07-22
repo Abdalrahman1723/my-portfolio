@@ -2,17 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/core/helper/url_launcher.dart';
 import 'package:my_portfolio/core/utils/social_links.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
-
-  void _launch(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
