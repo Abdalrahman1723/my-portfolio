@@ -82326,9 +82326,9 @@ $0(){return A.eb("https://wa.me/qr/KWV6YJ7TFZOTH1")},
 $S:0}
 A.JE.prototype={
 I(a){var s=null
-return A.awv(s,B.M,A.fa(A.es(A.b([new A.xz(A.aHP(s,s,new A.qg("assets/dev.png",s,s)),100,100,s),A.bx(s,16,s),new A.Ar(200,B.j,s),A.bx(s,12,s),A.xr("Loading awesome things...",$.WS,A.cY(s,s,s,s,s,s,s,s,s,s,s,26,s,s,s,s,s,!0,s,s,s,s,s,s,s,s))],t.p),B.S,B.cn,B.a0),s,s),s)}}
+return A.awv(s,B.M,A.fa(A.es(A.b([new A.xz(A.aHP(s,s,new A.qg("images/dev.png",s,s)),100,100,s),A.bx(s,16,s),new A.Ar(200,B.j,s),A.bx(s,12,s),A.xr("Loading awesome things...",$.WS,A.cY(s,s,s,s,s,s,s,s,s,s,s,26,s,s,s,s,s,!0,s,s,s,s,s,s,s,s))],t.p),B.S,B.cn,B.a0),s,s),s)}}
 A.Gf.prototype={
-I(a){var s,r=null,q=A.av(13,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),p=A.dO(24),o=A.b([new A.dh(0,B.cu,A.av(20,B.l.C()>>>16&255,B.l.C()>>>8&255,B.l.C()&255),B.k_,12)],t.sq),n=A.xr("About Me",A.b([B.dh,B.eA],t.d),B.z6),m=A.aqv("assets/me2.jpg",A.fr(a).e?50:80),l=A.ck("Abdalrahman Alaa Eldin Salah",r,r,r,A.cY(r,r,r,r,r,r,r,r,r,r,r,A.fr(a).e?22:36,r,r,B.aH,r,r,!0,r,r,r,r,r,r,r,r),r,r),k=t.p
+I(a){var s,r=null,q=A.av(13,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),p=A.dO(24),o=A.b([new A.dh(0,B.cu,A.av(20,B.l.C()>>>16&255,B.l.C()>>>8&255,B.l.C()&255),B.k_,12)],t.sq),n=A.xr("About Me",A.b([B.dh,B.eA],t.d),B.z6),m=A.aqv("images/me2.jpg",A.fr(a).e?50:80),l=A.ck("Abdalrahman Alaa Eldin Salah",r,r,r,A.cY(r,r,r,r,r,r,r,r,r,r,r,A.fr(a).e?22:36,r,r,B.aH,r,r,!0,r,r,r,r,r,r,r,r),r,r),k=t.p
 l=A.b([l,B.kA,A.ck("Flutter Developer | Mobile & Web Enthusiast",r,r,r,A.cY(r,r,B.ty,r,r,r,r,r,r,r,r,A.fr(a).e?18:22,r,r,B.V,r,r,!0,r,r,r,r,r,r,r,r),r,r),B.hK],k)
 s=!A.fr(a).e?new A.vU(r):r
 if(s!=null)l.push(s)
@@ -82404,7 +82404,7 @@ if(e)n=12
 else n=d?14:18
 m=e?12:20
 l=e?8:12
-k=A.aqv("assets/me.jpg",s)
+k=A.aqv("images/me.jpg",s)
 j=e?B.aV:B.S
 i=t.p
 h=A.es(A.b([A.xr("Hello, World! I'm",A.b([B.dh,B.eA],t.d),A.cY(g,g,g,g,g,g,g,g,g,g,g,q,g,g,g,g,g,!0,g,g,g,g,g,g,g,g)),A.ck("Abdalrahman",g,g,g,A.cY(g,g,g,g,g,g,g,g,g,g,g,p,g,g,B.aH,g,g,!0,g,g,g,g,g,g,g,g),g,g),A.ck("Developer by day, debugger by night,\nGoogler 24/7.",g,B.c5,g,A.cY(g,g,B.ty,g,g,g,g,g,g,g,g,o,g,g,g,g,g,!0,g,g,g,g,g,g,g,g),B.aE,g),A.bx(g,l,g),A.ck("Software engineer | Flutter developer | Part-Time Bug Creator \ud83d\udc1e",g,B.kM,g,A.cY(g,g,g,g,g,g,g,g,g,g,g,n,g,g,g,g,g,!0,g,g,g,g,g,g,g,g),g,g)],i),j,B.X,B.a0)
