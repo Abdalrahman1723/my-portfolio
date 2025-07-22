@@ -16,7 +16,6 @@ class IntroSection extends StatelessWidget {
     bool isSmall = screenWidth < smallScreenMax;
     bool isMedium =
         screenWidth >= smallScreenMax && screenWidth < mediumScreenMax;
-    bool isLarge = screenWidth >= mediumScreenMax;
 
     // Responsive values
     double avatarRadius = isSmall
