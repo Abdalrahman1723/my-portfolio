@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/core/helper/url_launcher.dart';
 import 'package:my_portfolio/core/responsive/screen_type.dart';
 import 'package:my_portfolio/core/utils/nav_buttons.dart';
 import 'package:my_portfolio/core/utils/social_links.dart';
@@ -159,6 +160,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
+      floatingActionButton: ScreenType(context: context).isMobile
+          ? FloatingActionButton(
+              tooltip: "contact on WhatsApp",
+              onPressed: () => launchUrlGlobal(SocialLinks.whatsApp),
+              backgroundColor: Colors.green,
+              child: Icon(FontAwesomeIcons.whatsapp),
+            )
+          : null,
     );
   }
 }
