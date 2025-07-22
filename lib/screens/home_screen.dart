@@ -21,19 +21,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _launchURL(String url) async {
-    final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    } else {
-      throw 'Could not launch $url';
+  final homeKey = GlobalKey();
+  final aboutKey = GlobalKey();
+  final projectsKey = GlobalKey();
+  final contactKey = GlobalKey();
+
+  final _scrollController = ScrollController();
+
+  //scroll to position
+  void scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
     }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController;
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final double tabletSize = screenWidth * .035;
+    final double tabletSize = screenWidth * .03;
     return Scaffold(
       appBar: !ScreenType(context: context).isLargerThanMobile
           ? null
@@ -55,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //contact me on whatsApp icon button
               actions: [
                 InkWell(
-                  onTap: () => _launchURL(SocialLinks.whatsApp),
+                  onTap: () => launchUrlGlobal(SocialLinks.whatsApp),
                   child: Container(
                     padding: EdgeInsets.only(
                       left: 12,
@@ -93,25 +109,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   // SizedBox(width: 150),
                   NavButtons(title: "Home", navigate: () {}),
                   SizedBox(
-                    width: ScreenType(context: context).isTablet
+                    width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
                         : 100,
                   ),
                   Text("|"),
                   SizedBox(
-                    width: ScreenType(context: context).isTablet
+                    width: ScreenType(context: context).isLargerThanMobile
+                        ? tabletSize
+                        : 100,
+                  ),
+                  NavButtons(title: "About", navigate: () {}),
+                  SizedBox(
+                    width: ScreenType(context: context).isLargerThanMobile
+                        ? tabletSize
+                        : 100,
+                  ),
+                  Text("|"),
+                  SizedBox(
+                    width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
                         : 100,
                   ),
                   NavButtons(title: "Projects", navigate: () {}),
                   SizedBox(
-                    width: ScreenType(context: context).isTablet
+                    width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
                         : 100,
                   ),
                   Text("|"),
                   SizedBox(
-                    width: ScreenType(context: context).isTablet
+                    width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
                         : 100,
                   ),
