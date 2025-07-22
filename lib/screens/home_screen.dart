@@ -120,38 +120,42 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(32),
-            child: Center(
-              child: Column(
-                children: [
-                  SizedBox(height: 30),
-                  //short brief intro
-                  IntroSection(),
-                  SizedBox(height: 30),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Center(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 30),
+                      //short brief intro
+                      IntroSection(),
+                      SizedBox(height: 30),
 
-                  Divider(thickness: 4, color: Colors.white70, indent: 15),
-                  SizedBox(height: 30),
-                  AboutMeSection(),
+                      Divider(thickness: 4, color: Colors.white70, indent: 15),
+                      SizedBox(height: 30),
+                      AboutMeSection(),
 
-                  SizedBox(height: 40),
-                  CustomDivider(),
-                  SizedBox(height: 30),
-                  ProjectsSection(),
-                  Divider(thickness: 4, color: Colors.white70, indent: 15),
+                      SizedBox(height: 40),
+                      CustomDivider(),
+                      SizedBox(height: 30),
+                      ProjectsSection(),
+                      Divider(thickness: 4, color: Colors.white70, indent: 15),
 
-                  SizedBox(height: 30),
-                  MediumSection(),
+                      SizedBox(height: 30),
+                      MediumSection(),
 
-                  SizedBox(height: 30),
-                  Divider(thickness: 4, color: Colors.white70, indent: 15),
-                  SizedBox(height: 30),
-                  ContactSection(),
-                  SizedBox(height: 30),
-                  Footer(),
-                ],
+                      SizedBox(height: 30),
+                      Divider(thickness: 4, color: Colors.white70, indent: 15),
+                      SizedBox(height: 30),
+                      ContactSection(),
+                    ],
+                  ),
+                ),
               ),
-            ),
+              SizedBox(height: 30),
+              Footer(),
+            ],
           ),
         ),
       ),
