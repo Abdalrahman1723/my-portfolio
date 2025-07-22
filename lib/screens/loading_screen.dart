@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
@@ -6,14 +7,17 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black87,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            FlutterLogo(size: 64),
+          children: [
+            Image.asset('assets/dev.png'),
             SizedBox(height: 16),
-            CircularProgressIndicator(),
+            LoadingAnimationWidget.staggeredDotsWave(
+              color: Colors.white,
+              size: 200,
+            ),
             SizedBox(height: 12),
             Text(
               'Loading awesome things...',
