@@ -52,7 +52,7 @@ class IntroSection extends StatelessWidget {
     double sectionSpacing = isSmall ? 8 : 12;
 
     Widget avatar = CustomCircularAvatar(
-      imageUrl: "lib/core/assets/intro.png",
+      imageUrl: "lib/core/assets/intro.jpg",
       radius: avatarRadius,
     );
 
