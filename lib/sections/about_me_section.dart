@@ -38,7 +38,7 @@ class AboutMeSection extends StatelessWidget {
             children: [
               // ---------Avatar
               CustomCircularAvatar(
-                imageUrl: 'images/me2.jpg',
+                imageUrl: 'images/about.jpg',
                 radius: ScreenType(context: context).isMobile ? 50 : 80,
               ),
               const SizedBox(width: 32),

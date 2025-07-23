@@ -53,6 +53,7 @@ class ProjectsSection extends StatelessWidget {
                               .toList(),
                         ),
                       ),
+                      //arrow indicator
                       Positioned(
                         right: 0,
                         top: 0,

@@ -13,7 +13,6 @@ class ProjectCard extends StatelessWidget {
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: 600), // Adjust maxWidth as needed
         child: Card(
-        
           margin: const EdgeInsets.symmetric(vertical: 12),
           elevation: 4,
           child: Padding(
@@ -22,10 +21,7 @@ class ProjectCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  project.title,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
+                Text(project.title, style: TextStyle(fontSize: 20)),
                 const SizedBox(height: 8),
                 GlassHover(project: project),
                 const SizedBox(height: 8),
