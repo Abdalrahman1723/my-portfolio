@@ -5,7 +5,7 @@ import 'package:my_portfolio/widgets/neumorphic_progress_bar.dart';
 const double topSpace = 8;
 const double bottomSpace = topSpace;
 final List<Widget> skills = const [
-  // Flutter skill
+  // Flutter skill 
   Column(
     children: [
       Text('Flutter'),
