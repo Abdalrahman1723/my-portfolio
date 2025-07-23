@@ -82898,7 +82898,7 @@ A.K0.prototype={
 I(a){var s=null
 return A.axh(s,B.O,A.eW(A.ep(A.b([new A.xM(A.aIz(s,s,new A.qq("images/dev.png",s,s)),100,100,s),A.bh(s,16,s),new A.AG(200,B.j,s),A.bh(s,12,s),A.rm("Loading awesome things...",$.GE,A.cH(s,s,s,s,s,s,s,s,s,s,s,26,s,s,s,s,s,!0,s,s,s,s,s,s,s,s))],t.p),B.w,B.ct,B.D),s,s),s)}}
 A.Gv.prototype={
-I(a){var s,r=null,q=A.at(13,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),p=A.dC(24),o=A.b([new A.cE(0,B.br,A.at(20,B.l.C()>>>16&255,B.l.C()>>>8&255,B.l.C()&255),B.k8,12)],t.R),n=A.rm("About Me",A.b([B.dm,B.eG],t.W),B.ze),m=A.ar8("images/about.jpg",A.dj(a).e?50:80),l=A.ca("Abdalrahman Alaa Eldin Salah",r,r,r,A.cH(r,r,r,r,r,r,r,r,r,r,r,A.dj(a).e?22:36,r,r,B.aL,r,r,!0,r,r,r,r,r,r,r,r),r,r),k=t.p
+I(a){var s,r=null,q=A.at(13,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),p=A.dC(24),o=A.b([new A.cE(0,B.br,A.at(20,B.l.C()>>>16&255,B.l.C()>>>8&255,B.l.C()&255),B.k8,12)],t.R),n=A.rm("About Me",A.b([B.dm,B.eG],t.W),B.ze),m=A.ar8("lib/core/assets/about.jpg",A.dj(a).e?50:80),l=A.ca("Abdalrahman Alaa Eldin Salah",r,r,r,A.cH(r,r,r,r,r,r,r,r,r,r,r,A.dj(a).e?22:36,r,r,B.aL,r,r,!0,r,r,r,r,r,r,r,r),r,r),k=t.p
 l=A.b([l,B.a6,A.ca("Flutter Developer | Mobile & Web Enthusiast",r,r,r,A.cH(r,r,B.tG,r,r,r,r,r,r,r,r,A.dj(a).e?18:22,r,r,B.X,r,r,!0,r,r,r,r,r,r,r,r),r,r),B.hQ],k)
 s=!A.dj(a).e?new A.w5(r):r
 if(s!=null)l.push(s)
@@ -82932,7 +82932,7 @@ k.mm(B.kN)
 i.mm(B.kN)}}else{m=p.c
 if(m!=null)m.an(t.Pu).f.Ai(B.Qs)}case 1:return A.L(q,r)}})
 return A.M($async$wr,r)},
-I(a){var s=this,r=null,q=A.at(13,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),p=A.dC(24),o=A.b([new A.cE(0,B.br,A.at(20,B.l.C()>>>16&255,B.l.C()>>>8&255,B.l.C()&255),B.k8,12)],t.R),n=A.rm("Contact Me",$.GE,B.ze),m=A.ar8("images/intro.jpg",50),l=A.ca("ENG. Abdalrahman Alaa",r,r,r,B.Se,r,r),k=A.bh(r,12,r),j=A.ca("Drop a message \u2014 even if it\u2019s just to say hi \ud83d\udc4b",r,r,r,A.cH(r,r,B.K,r,r,r,r,r,r,r,r,14,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r,r),i=A.asm(s.d,A.a3K(r,new A.h2(4,A.dC(12),B.fb),r,r,r,r,r,r,!0,r,r,r,r,r,r,A.at(20,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),!0,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,"Your Name",!0,!0,r,r,r,r,r,r,r,r,r,r,r,r,r),20,1),h=A.asm(s.e,A.a3K(r,new A.h2(4,A.dC(12),B.fb),r,r,r,r,r,r,!0,r,r,r,r,r,r,A.at(20,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),!0,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,"Your Email",!0,!0,r,r,r,r,r,r,r,r,r,r,r,r,r),r,1),g=A.asm(s.f,A.a3K(r,new A.h2(4,A.dC(12),B.fb),r,r,r,r,r,r,!0,r,r,r,r,r,r,A.at(20,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),!0,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,"Your Message",!0,!0,r,r,r,r,r,r,r,r,r,r,r,r,r),250,5),f=s.r,e=f?r:s.gabV(),d=f?B.Qg:B.Gq
+I(a){var s=this,r=null,q=A.at(13,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),p=A.dC(24),o=A.b([new A.cE(0,B.br,A.at(20,B.l.C()>>>16&255,B.l.C()>>>8&255,B.l.C()&255),B.k8,12)],t.R),n=A.rm("Contact Me",$.GE,B.ze),m=A.ar8("lib/core/assets/intro.jpg",50),l=A.ca("ENG. Abdalrahman Alaa",r,r,r,B.Se,r,r),k=A.bh(r,12,r),j=A.ca("Drop a message \u2014 even if it\u2019s just to say hi \ud83d\udc4b",r,r,r,A.cH(r,r,B.K,r,r,r,r,r,r,r,r,14,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r,r),i=A.asm(s.d,A.a3K(r,new A.h2(4,A.dC(12),B.fb),r,r,r,r,r,r,!0,r,r,r,r,r,r,A.at(20,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),!0,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,"Your Name",!0,!0,r,r,r,r,r,r,r,r,r,r,r,r,r),20,1),h=A.asm(s.e,A.a3K(r,new A.h2(4,A.dC(12),B.fb),r,r,r,r,r,r,!0,r,r,r,r,r,r,A.at(20,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),!0,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,"Your Email",!0,!0,r,r,r,r,r,r,r,r,r,r,r,r,r),r,1),g=A.asm(s.f,A.a3K(r,new A.h2(4,A.dC(12),B.fb),r,r,r,r,r,r,!0,r,r,r,r,r,r,A.at(20,B.j.C()>>>16&255,B.j.C()>>>8&255,B.j.C()&255),!0,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,"Your Message",!0,!0,r,r,r,r,r,r,r,r,r,r,r,r,r),250,5),f=s.r,e=f?r:s.gabV(),d=f?B.Qg:B.Gq
 return new A.bE(B.ek,A.cF(r,A.ep(A.b([n,B.c8,m,B.c8,l,k,j,B.c8,i,B.eV,h,B.eV,g,B.c8,A.bh(A.avs(d,A.ca(f?"Sending...":"Send",r,r,r,r,r,r),e,A.avt(r,r,B.dm,r,r,r,r,r,r,B.j,r,r,B.F2,r,new A.cg(A.dC(12),B.r),r,r,r,B.zb,r)),r,1/0)],t.p),B.w,B.A,B.D),B.q,r,r,new A.c3(q,r,r,p,o,r,B.ag),r,r,r,r,B.ek,r,r,r),r)}}
 A.ahD.prototype={
 $0(){return this.a.r=!0},
@@ -82974,7 +82974,7 @@ if(e)n=12
 else n=d?14:18
 m=e?12:20
 l=e?8:12
-k=A.ar8("images/intro.jpg",s)
+k=A.ar8("lib/core/assets/intro.jpg",s)
 j=e?B.b0:B.w
 i=t.p
 h=A.ep(A.b([A.rm("Hello, World! I'm",A.b([B.dm,B.eG],t.W),A.cH(g,g,g,g,g,g,g,g,g,g,g,q,g,g,g,g,g,!0,g,g,g,g,g,g,g,g)),A.ca("Abdalrahman",g,g,g,A.cH(g,g,g,g,g,g,g,g,g,g,g,p,g,g,B.aL,g,g,!0,g,g,g,g,g,g,g,g),g,g),A.ca("Developer by day, debugger by night,\nGoogler 24/7.",g,B.ca,g,A.cH(g,g,B.tG,g,g,g,g,g,g,g,g,o,g,g,g,g,g,!0,g,g,g,g,g,g,g,g),B.aI,g),A.bh(g,l,g),A.ca("Software engineer | Flutter developer | Part-Time Bug Creator \ud83d\udc1e",g,B.kR,g,A.cH(g,g,g,g,g,g,g,g,g,g,g,n,g,g,g,g,g,!0,g,g,g,g,g,g,g,g),g,g)],i),j,B.A,B.D)
