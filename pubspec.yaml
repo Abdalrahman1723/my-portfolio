@@ -24,6 +24,7 @@ dependencies:
   http: ^1.4.0
   loading_animation_widget: ^1.2.0+4
   vector_math: ^2.1.4
+  control_style: ^0.1.0
 
 dev_dependencies:
   flutter_test:

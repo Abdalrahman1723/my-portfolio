@@ -73,6 +73,7 @@ class AboutMeSection extends StatelessWidget {
                     //show the bio and social links
                     ?!ScreenType(context: context).isMobile ? Bio() : null,
                     //----------Bio
+                    
                   ],
                 ),
               ),
