@@ -42,11 +42,16 @@ class ProjectsSection extends StatelessWidget {
                     children: [
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
+                        physics:
+                            const BouncingScrollPhysics(), // Smooth & natural scroll feel
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                        ), // Add some side padding
                         child: Row(
                           children: projects
                               .map(
                                 (project) => Padding(
-                                  padding: const EdgeInsets.only(right: 10.0),
+                                  padding: const EdgeInsets.only(right: 12.0),
                                   child: ProjectCard(project: project),
                                 ),
                               )
