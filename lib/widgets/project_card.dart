@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/core/helper/url_launcher.dart';
+import 'package:my_portfolio/core/responsive/screen_type.dart';
 import 'package:my_portfolio/widgets/glass_hover.dart';
 
 import '../models/project.dart';
@@ -25,6 +27,7 @@ class ProjectCard extends StatelessWidget {
                 const SizedBox(height: 8),
                 GlassHover(project: project),
                 const SizedBox(height: 8),
+                //technology used
                 Wrap(
                   alignment: WrapAlignment.spaceEvenly,
                   spacing: 8,
@@ -33,6 +36,19 @@ class ProjectCard extends StatelessWidget {
                       .map((tech) => Chip(label: Text(tech)))
                       .toList(),
                 ),
+                const SizedBox(height: 12),
+                ?ScreenType(context: context).isBetweenMobileAndTablet
+                    ? ElevatedButton(
+                        onPressed: () => launchUrlGlobal(project.githubUrl!),
+                        child: Row(
+                          children: [
+                            Icon(Icons.open_in_new),
+                            const SizedBox(width: 8),
+                            Text("view on github"),
+                          ],
+                        ),
+                      )
+                    : null,
               ],
             ),
           ),
