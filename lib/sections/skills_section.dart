@@ -13,7 +13,7 @@ class SkillsSection extends StatelessWidget {
       child: Column(
         children: [
           GradientBackground.gradientText(
-            "My skills",
+            "My Technical skills",
             AppColors.gradientTextColors,
             style: TextStyle(fontSize: 36),
           ),
@@ -22,6 +22,7 @@ class SkillsSection extends StatelessWidget {
             spacing: 8.0, // horizontal space between children
             runSpacing: 4.0, // vertical space between lines
             direction: Axis.horizontal, // or Axis.vertical
+
             children: skills,
           ),
         ],

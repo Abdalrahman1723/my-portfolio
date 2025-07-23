@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final screenWidth = MediaQuery.of(context).size.width;
     final double tabletSize = screenWidth * .03;
     return Scaffold(
-      appBar: !ScreenType(context: context).isLargerThanMobile
+      appBar: ScreenType(context: context).isMobile
           ? null
           : AppBar(
               flexibleSpace: Container(
@@ -171,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(height: 30),
                       //----short brief intro section
                       Container(key: homeKey, child: IntroSection()),
-                      SizedBox(height: 30),
+                      SizedBox(height: 20),
 
                       Divider(thickness: 4, color: Colors.white70, indent: 15),
                       SizedBox(height: 30),
@@ -179,7 +179,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(key: aboutKey, child: AboutMeSection()),
 
                       SizedBox(height: 30),
+                      Divider(thickness: 4, color: Colors.white70, indent: 15),
+                      SizedBox(height: 20),
 
+                      //skills section
                       SkillsSection(),
                       SizedBox(height: 40),
                       CustomDivider(),
