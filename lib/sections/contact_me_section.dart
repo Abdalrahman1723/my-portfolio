@@ -83,7 +83,7 @@ class _ContactSectionState extends State<ContactSection> {
               style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 24),
-            CustomCircularAvatar(imageUrl: 'images/intro.jpg', radius: 50),
+            CustomCircularAvatar(imageUrl: 'lib/core/assets/intro.jpg', radius: 50),
             const SizedBox(height: 24),
             Text(
               "ENG. Abdalrahman Alaa",
