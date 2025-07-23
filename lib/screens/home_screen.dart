@@ -25,6 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final aboutKey = GlobalKey();
   final projectsKey = GlobalKey();
   final contactKey = GlobalKey();
+  final skillsKey = GlobalKey();
 
   final _scrollController = ScrollController();
 
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // SizedBox(width: 150),
+                  //home
                   NavButtons(
                     title: "Home",
                     navigate: () => scrollToSection(homeKey),
@@ -117,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         : 100,
                   ),
                   Text("|"),
+                  //about
                   SizedBox(
                     width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
@@ -132,6 +134,23 @@ class _MyHomePageState extends State<MyHomePage> {
                         : 100,
                   ),
                   Text("|"),
+                  //skills
+                  SizedBox(
+                    width: ScreenType(context: context).isLargerThanMobile
+                        ? tabletSize
+                        : 100,
+                  ),
+                  NavButtons(
+                    title: "Skills",
+                    navigate: () => scrollToSection(skillsKey),
+                  ),
+                  SizedBox(
+                    width: ScreenType(context: context).isLargerThanMobile
+                        ? tabletSize
+                        : 100,
+                  ),
+                  Text("|"),
+                  //project
                   SizedBox(
                     width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
@@ -147,13 +166,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         : 100,
                   ),
                   Text("|"),
+                  //contacts
                   SizedBox(
                     width: ScreenType(context: context).isLargerThanMobile
                         ? tabletSize
                         : 100,
                   ),
                   NavButtons(
-                    title: "Contact",
+                    title: "Contacts",
                     navigate: () => scrollToSection(contactKey),
                   ),
                 ],
@@ -183,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(height: 20),
 
                       //skills section
-                      SkillsSection(),
+                      Container(key: skillsKey, child: SkillsSection()),
                       SizedBox(height: 40),
                       CustomDivider(),
                       SizedBox(height: 30),
