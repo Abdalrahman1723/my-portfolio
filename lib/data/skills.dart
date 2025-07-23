@@ -11,7 +11,7 @@ final List<Widget> skills = const [
       Text('Flutter'),
       SizedBox(height: topSpace),
       NeumorphicProgressBar(
-        progress: 0.85,
+        progress: 0.80,
         logo: Icon(FontAwesomeIcons.flutter),
       ),
       SizedBox(height: bottomSpace),
