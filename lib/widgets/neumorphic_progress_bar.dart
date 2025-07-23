@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/core/responsive/screen_type.dart';
 import 'package:vector_math/vector_math.dart' as vm;
 
 class NeumorphicProgressBar extends StatefulWidget {
   final Icon logo;
-  const NeumorphicProgressBar({super.key, required this.logo});
+  final double progress;
+  const NeumorphicProgressBar({
+    super.key,
+    required this.logo,
+    required this.progress,
+  });
 
   @override
   State<NeumorphicProgressBar> createState() => _NeumorphicProgressBarState();
@@ -18,44 +24,56 @@ class _NeumorphicProgressBarState extends State<NeumorphicProgressBar> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          NeumorphicCircle(
-            shadowColor: shadowColor,
-            backgroundColor: backgroundColor,
-            highlightColor: highlightColor,
-            innerShadow: true,
-            outerShadow: false,
-          ),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              return SizedBox(
-                width: constraints.maxWidth * 0.3,
-                height: constraints.maxWidth * 0.3,
-                child: NeumorphicCircle(
-                  innerShadow: false,
-                  outerShadow: true,
-                  highlightColor: highlightColor,
-                  shadowColor: shadowColor,
-                  backgroundColor: backgroundColor,
-                  child: SizedBox.expand(
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: widget.logo,
+    return SizedBox(
+      width: ScreenType(context: context).isMobile
+          ? 100
+          : ScreenType(context: context).isTablet
+          ? 120
+          : 150,
+      height: ScreenType(context: context).isMobile
+          ? 100
+          : ScreenType(context: context).isTablet
+          ? 120
+          : 150,
+      child: AspectRatio(
+        aspectRatio: 1,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            NeumorphicCircle(
+              shadowColor: shadowColor,
+              backgroundColor: backgroundColor,
+              highlightColor: highlightColor,
+              innerShadow: true,
+              outerShadow: false,
+            ),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                return SizedBox(
+                  width: constraints.maxWidth * 0.3,
+                  height: constraints.maxWidth * 0.3,
+                  child: NeumorphicCircle(
+                    innerShadow: false,
+                    outerShadow: true,
+                    highlightColor: highlightColor,
+                    shadowColor: shadowColor,
+                    backgroundColor: backgroundColor,
+                    child: SizedBox.expand(
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: widget.logo,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              );
-            },
-          ),
-          const ProgressRing(progress: 0.6),
-        ],
+                );
+              },
+            ),
+            ProgressRing(progress: widget.progress),
+          ],
+        ),
       ),
     );
   }

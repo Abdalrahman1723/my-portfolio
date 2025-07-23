@@ -10,8 +10,8 @@ import 'package:my_portfolio/sections/footer.dart';
 import 'package:my_portfolio/sections/intro_section.dart';
 import 'package:my_portfolio/sections/projects_section.dart';
 import 'package:my_portfolio/sections/medium_section.dart';
+import 'package:my_portfolio/sections/skills_section.dart';
 import 'package:my_portfolio/widgets/custom_divider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -178,6 +178,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       //----about section
                       Container(key: aboutKey, child: AboutMeSection()),
 
+                      SizedBox(height: 30),
+
+                      SkillsSection(),
                       SizedBox(height: 40),
                       CustomDivider(),
                       SizedBox(height: 30),
@@ -185,6 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(key: projectsKey, child: ProjectsSection()),
                       Divider(thickness: 4, color: Colors.white70, indent: 15),
 
+                      //----Medium Section
                       SizedBox(height: 30),
                       MediumSection(),
 
