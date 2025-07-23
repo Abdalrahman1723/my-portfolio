@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/core/gradient_text.dart';
 import 'package:my_portfolio/core/helper/url_launcher.dart';
 import 'package:my_portfolio/core/responsive/screen_type.dart';
@@ -15,11 +16,24 @@ class MediumSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          GradientBackground.gradientText(
-            'Medium Articles',
-            AppColors.gradientTextColors,
-            style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              GradientBackground.gradientIcon(FontAwesomeIcons.medium, [
+                Colors.white,
+                Colors.white,
+              ]),
+              const SizedBox(width: 14),
+              GradientBackground.gradientText(
+                'Medium Articles',
+                AppColors.gradientTextColors,
+                style: const TextStyle(
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
+
           const SizedBox(height: 24),
 
           const SizedBox(height: 24),
