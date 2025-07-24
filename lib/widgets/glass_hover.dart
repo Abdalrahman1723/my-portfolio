@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/core/helper/url_launcher.dart';
 import 'package:my_portfolio/models/project.dart';
+import 'package:my_portfolio/screens/project_details_screen.dart';
 
 class GlassHover extends StatelessWidget {
   final Project project;
@@ -89,8 +89,15 @@ class _HoverCardWidgetState extends State<HoverCardWidget>
                           ),
                           const Spacer(),
                           GestureDetector(
-                            onTap: () =>
-                                launchUrlGlobal(widget.project.githubUrl!),
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => ProjectDetailsScreen(
+                                    project: widget.project,
+                                  ),
+                                ),
+                              );
+                            },
                             child: Container(
                               height: 35,
                               width: double.infinity,

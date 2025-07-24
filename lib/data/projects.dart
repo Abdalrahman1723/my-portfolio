@@ -18,8 +18,7 @@ final List<Project> projects = [
       "health/4.png",
       "health/5.png",
       "health/6.png",
-      ],
-
+    ],
   ),
 
   //--------------------Chatting
@@ -31,6 +30,7 @@ final List<Project> projects = [
     technologies: ['Flutter', 'Dart', 'Firebase'],
     githubUrl: 'https://github.com/Abdalrahman1723/chat-app',
     imageURL: 'lib/core/assets/chatting.jpg',
+    screenShots: ["chat/1.png", "chat/2.png", "chat/3.png"],
   ),
 
   //--------------------Portfolio
@@ -46,6 +46,7 @@ final List<Project> projects = [
     ],
     githubUrl: 'https://github.com/Abdalrahman1723/my-portfolio',
     imageURL: 'lib/core/assets/portfolio.png',
+    screenShots: [],
   ),
 
   //--------------------tic tac
@@ -56,6 +57,7 @@ final List<Project> projects = [
     technologies: ['Flutter', 'Dart'],
     githubUrl: 'https://github.com/Abdalrahman1723/tic-tac-game',
     imageURL: 'lib/core/assets/xo.jpg',
+    screenShots: [],
   ),
 
   //--------------------expenses
@@ -67,6 +69,7 @@ final List<Project> projects = [
     technologies: ['Flutter', 'Dart'],
     githubUrl: 'https://github.com/Abdalrahman1723/Expenses-app',
     imageURL: 'lib/core/assets/expenses.jpg',
+    screenShots: [],
   ),
   //--------------------meals app
   Project(
@@ -77,6 +80,7 @@ final List<Project> projects = [
     technologies: ['Flutter', 'Dart', "Riverpod"],
     githubUrl: 'https://github.com/Abdalrahman1723/meals-app',
     imageURL: 'lib/core/assets/meals.jpg',
+    screenShots: [],
   ),
   //--------------------BMI app
   Project(
@@ -87,6 +91,7 @@ final List<Project> projects = [
     technologies: ['Flutter', 'Dart'],
     githubUrl: 'https://github.com/Abdalrahman1723/BMI-app',
     imageURL: 'lib/core/assets/bmi.jpg',
+    screenShots: [],
   ),
   // Add more projects here
 ];
