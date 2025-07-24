@@ -82832,7 +82832,7 @@ s=A.cX(a)
 r=A.au7(k,!1,B.T,k,A.bF(l.a.c.a,k,k,k,A.c6(k,k,k,k,k,k,k,k,k,k,k,18,k,k,k,k,k,!0,k,k,k,k,k,k,k,k),k,k))
 q=A.aqM(new A.bp(B.fM,A.bF(l.a.c.b,k,k,k,A.c6(k,k,k,k,k,k,k,k,k,k,k,16,k,k,k,k,k,!0,k,k,k,k,k,k,k,k),k,k),k),k,k,k)
 p=l.a.c
-if(p.a.toLowerCase()==="personal portfolio")s=A.dq(A.dr(A.b([A.lR(B.Gx,B.mh,k,80),B.bT,A.bF("Dah, you are already here! \ud83d\ude04",k,k,k,A.c6(k,k,B.m2,k,k,k,k,k,k,k,k,22,k,k,B.aA,k,k,!0,k,k,k,k,k,k,k,k),B.cx,k),B.dK,A.bF("No need to look for a screenshot of this portfolio,\nyou're literally inside it!",k,k,k,A.c6(k,k,B.cn,k,k,k,k,k,k,k,k,16,k,k,k,k,k,!0,k,k,k,k,k,k,k,k),B.cx,k)],t.p),B.u,B.bQ,B.x),k,k)
+if(p.a.toLowerCase()==="personal portfolio")s=A.dq(A.dr(A.b([A.lR(B.Gx,B.mh,k,80),B.bT,A.bF("Duh, you are already here! \ud83d\ude04",k,k,k,A.c6(k,k,B.m2,k,k,k,k,k,k,k,k,22,k,k,B.aA,k,k,!0,k,k,k,k,k,k,k,k),B.cx,k),B.dK,A.bF("No need to look for a screenshot of this portfolio,\nyou're literally inside it!",k,k,k,A.c6(k,k,B.cn,k,k,k,k,k,k,k,k,16,k,k,k,k,k,!0,k,k,k,k,k,k,k,k),B.cx,k)],t.p),B.u,B.bQ,B.x),k,k)
 else if(p.r.length===0)s=A.dq(A.dr(A.b([A.lR(B.Gr,B.iF,k,64),B.f1,A.bF("No UI screenshots available yet.",k,k,k,A.c6(k,k,B.db,k,k,k,k,k,k,k,k,18,k,k,B.W,k,k,!0,k,k,k,k,k,k,k,k),B.cx,k),B.a5,A.bF("Stay tuned for future updates!",k,k,k,A.c6(k,k,B.iS,k,k,k,k,k,k,k,k,14,k,k,k,k,k,!0,k,k,k,k,k,k,k,k),B.cx,k)],t.p),B.u,B.bQ,B.x),k,k)
 else{p=A.cX(a).e?B.a_:B.aN
 o=t.p
