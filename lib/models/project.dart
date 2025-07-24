@@ -5,6 +5,7 @@ class Project {
   final List<String>? technologies;
   final String? githubUrl;
   final String imageURL;
+  final List<String>? screenShots;
 
   Project({
     required this.title,
@@ -12,6 +13,7 @@ class Project {
     required this.slogan,
     this.technologies,
     this.githubUrl,
+    this.screenShots,
     required this.imageURL,
   });
 }

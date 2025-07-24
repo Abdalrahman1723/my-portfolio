@@ -11,6 +11,15 @@ final List<Project> projects = [
     technologies: ['Flutter', 'Dart', '.Net', 'RESTFUL API', "bloc"],
     githubUrl: 'https://github.com/Abdalrahman1723/Health-care-management-app',
     imageURL: 'lib/core/assets/hcms.png',
+    screenShots: [
+      "health/1.png",
+      "health/2.png",
+      "health/3.png",
+      "health/4.png",
+      "health/5.png",
+      "health/6.png",
+      ],
+
   ),
 
   //--------------------Chatting

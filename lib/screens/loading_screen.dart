@@ -14,7 +14,7 @@ class LoadingScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('images/dev.png', width: 100, height: 100),
+            Image.asset('lib/core/assets/dev.png', width: 100, height: 100),
             SizedBox(height: 16),
             LoadingAnimationWidget.staggeredDotsWave(
               color: Colors.white,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/helper/url_launcher.dart';
 import 'package:my_portfolio/core/responsive/screen_type.dart';
+import 'package:my_portfolio/screens/project_details_screen.dart';
 import 'package:my_portfolio/widgets/glass_hover.dart';
 
 import '../models/project.dart';
@@ -43,15 +44,40 @@ class ProjectCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   ?ScreenType(context: context).isBetweenMobileAndTablet
-                      ? ElevatedButton(
-                          onPressed: () => launchUrlGlobal(project.githubUrl!),
-                          child: Row(
-                            children: [
-                              Icon(Icons.open_in_new),
-                              const SizedBox(width: 8),
-                              Text("view on github"),
-                            ],
-                          ),
+                      ? Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // project presentation
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        ProjectDetailsScreen(project: project),
+                                  ),
+                                );
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(Icons.info_outline),
+                                  const SizedBox(width: 8),
+                                  Text("Details"),
+                                ],
+                              ),
+                            ),
+                            //view on github
+                            ElevatedButton(
+                              onPressed: () =>
+                                  launchUrlGlobal(project.githubUrl!),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.open_in_new),
+                                  const SizedBox(width: 8),
+                                  Text("view on github"),
+                                ],
+                              ),
+                            ),
+                          ],
                         )
                       : null,
                 ],
