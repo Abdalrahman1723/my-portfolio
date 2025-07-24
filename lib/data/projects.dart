@@ -12,12 +12,12 @@ final List<Project> projects = [
     githubUrl: 'https://github.com/Abdalrahman1723/Health-care-management-app',
     imageURL: 'lib/core/assets/hcms.png',
     screenShots: [
-      "health/1.png",
-      "health/2.png",
-      "health/3.png",
-      "health/4.png",
-      "health/5.png",
-      "health/6.png",
+      "assets/health/1.png",
+      "assets/health/2.png",
+      "assets/health/3.png",
+      "assets/health/4.png",
+      "assets/health/5.png",
+      "assets/health/6.png",
     ],
   ),
 
@@ -30,7 +30,11 @@ final List<Project> projects = [
     technologies: ['Flutter', 'Dart', 'Firebase'],
     githubUrl: 'https://github.com/Abdalrahman1723/chat-app',
     imageURL: 'lib/core/assets/chatting.jpg',
-    screenShots: ["chat/1.png", "chat/2.png", "chat/3.png"],
+    screenShots: [
+      "assets/chat/1.png",
+      "assets/chat/2.png",
+      "assets/chat/3.png",
+    ],
   ),
 
   //--------------------Portfolio

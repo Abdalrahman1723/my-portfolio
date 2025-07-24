@@ -151,6 +151,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
                                       child: Image.asset(
+                                        
                                         imagePath,
                                         fit: BoxFit.contain,
                                         errorBuilder:
