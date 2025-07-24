@@ -79,7 +79,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                 ),
                                 const SizedBox(height: 24),
                                 Text(
-                                  "Dah, you are already here! 😄",
+                                  "Duh, you are already here! 😄",
                                   style: TextStyle(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
