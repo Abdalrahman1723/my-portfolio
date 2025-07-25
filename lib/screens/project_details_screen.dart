@@ -151,9 +151,37 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
                                       child: Image.asset(
-                                        
                                         imagePath,
                                         fit: BoxFit.contain,
+                                        frameBuilder:
+                                            (
+                                              BuildContext context,
+                                              Widget child,
+                                              int? frame,
+                                              bool wasSynchronouslyLoaded,
+                                            ) {
+                                              if (wasSynchronouslyLoaded) {
+                                                return child;
+                                              }
+                                              return AnimatedSwitcher(
+                                                duration: const Duration(
+                                                  milliseconds: 300,
+                                                ),
+                                                child: frame == null
+                                                    ? Container(
+                                                        height: 200,
+                                                        color: Colors.grey[900],
+                                                        child: const Center(
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                                color:
+                                                                    Colors.teal,
+                                                              ),
+                                                        ),
+                                                      )
+                                                    : child,
+                                              );
+                                            },
                                         errorBuilder:
                                             (context, error, stackTrace) =>
                                                 Container(
