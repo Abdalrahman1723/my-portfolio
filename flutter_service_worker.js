@@ -41,7 +41,7 @@ const RESOURCES = {"assets/lib/core/assets/chatting.jpg": "5dc5be45ea680b895997c
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "465c3f5a46e11cb29af01312b716078a",
 "version.json": "9b818ca9511483c901bed1545384376c",
 "manifest.json": "e2b9103aaafaf8ed9f90576c9d9a1341",
-"flutter_bootstrap.js": "26920abbd6703d3dfe0fd4ee952c3427",
+"flutter_bootstrap.js": "05ddc0a2ae6633c4d4c826c6abb60d45",
 "canvaskit/skwasm.wasm": "39dd80367a4e71582d234948adc521c0",
 "canvaskit/canvaskit.wasm": "7a3f4ae7d65fc1de6a6e7ddd3224bc93",
 "canvaskit/skwasm.js.symbols": "e72c79950c8a8483d826a7f0560573a1",
