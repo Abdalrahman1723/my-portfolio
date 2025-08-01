@@ -8,7 +8,6 @@ This site showcases my projects, skills, contact information, and a little bit o
 ## 🌐 Live Preview
 
 👉 [View Portfolio Website](https://abdalrahman1723.github.io/my-portfolio/)  
-*(Replace this with the actual hosted URL on Firebase, GitHub Pages, or Vercel)*
 
 ---
 
