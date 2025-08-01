@@ -6,7 +6,7 @@ class SocialLinks {
       "https://www.facebook.com/abdalrahman.alaa.906126/";
   static const String whatsApp = "https://wa.me/qr/KWV6YJ7TFZOTH1";
   static const String cv =
-      "https://drive.google.com/file/d/1-Tx0wyhE2WX6Y-uIAR36F7GvusL5a5Mt/view?usp=drive_link";
+      "https://drive.google.com/drive/folders/1HfzCUEvhz0EfgPZjpz-Tr6fT8Qd21_Xh";
 
   static const String email =
       "mailto:abdalrahman.alaa.eldin@gmail.com?subject=Hello&body=I%20saw%20your%20portfolio!";
